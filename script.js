@@ -22,6 +22,6 @@ banner.addEventListener('mouseover', () => {
 
 banner.addEventListener('mouseleave', () => {
     panels.forEach(element => {
-        element.setAttribute('style', 'opacity:0.8;');
+        element.setAttribute('style', 'opacity:0.8; filter:grayscale(1); transition: opacity 5s ease-in, filter 5s ease-in');
     });
 });
