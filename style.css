@@ -37,10 +37,10 @@ body {
           transform: translate(-50%, -50%) rotateY(var(--angle)) translateZ(275.5px);
   width: 70.4px;
   height: 220px;
-  -webkit-transition: opacity, -webkit-filter 2s ease;
-  transition: opacity, -webkit-filter 2s ease;
-  transition: opacity, filter 2s ease;
-  transition: opacity, filter 2s ease, -webkit-filter 2s ease;
+  -webkit-transition: opacity 2s ease, -webkit-filter 2s ease;
+  transition: opacity 2s ease, -webkit-filter 2s ease;
+  transition: opacity 2s ease, filter 2s ease;
+  transition: opacity 2s ease, filter 2s ease, -webkit-filter 2s ease;
   overflow: hidden;
   opacity: .8;
   -webkit-filter: grayscale(1);
