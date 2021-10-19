@@ -1,0 +1,309 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #111;
+  color: #fff;
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.scene {
+  position: relative;
+  -webkit-perspective: 800px;
+          perspective: 800px;
+  -webkit-perspective-origin: 50% calc(50% - 250px);
+          perspective-origin: 50% calc(50% - 250px);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+@-webkit-keyframes rotation {
+  to {
+    -webkit-transform: rotateY(-360deg);
+            transform: rotateY(-360deg);
+  }
+}
+
+@keyframes rotation {
+  to {
+    -webkit-transform: rotateY(-360deg);
+            transform: rotateY(-360deg);
+  }
+}
+
+.panel {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%) rotateY(var(--angle)) translateZ(273px);
+          transform: translate(-50%, -50%) rotateY(var(--angle)) translateZ(273px);
+  width: 70.4px;
+  height: 220px;
+  overflow: hidden;
+}
+
+.panel::before {
+  position: absolute;
+  left: var(--left);
+  content: url(./close2.png);
+}
+
+.panel:nth-child(1) {
+  --left: 0px;
+  --angle: 0deg;
+}
+
+.panel:nth-child(2) {
+  --left: -70.4px;
+  --angle: 14.4deg;
+}
+
+.panel:nth-child(3) {
+  --left: -140.8px;
+  --angle: 28.8deg;
+}
+
+.panel:nth-child(4) {
+  --left: -211.2px;
+  --angle: 43.2deg;
+}
+
+.panel:nth-child(5) {
+  --left: -281.6px;
+  --angle: 57.6deg;
+}
+
+.panel:nth-child(6) {
+  --left: -352px;
+  --angle: 72deg;
+}
+
+.panel:nth-child(7) {
+  --left: -422.4px;
+  --angle: 86.4deg;
+}
+
+.panel:nth-child(8) {
+  --left: -492.8px;
+  --angle: 100.8deg;
+}
+
+.panel:nth-child(9) {
+  --left: -563.2px;
+  --angle: 115.2deg;
+}
+
+.panel:nth-child(10) {
+  --left: -633.6px;
+  --angle: 129.6deg;
+}
+
+.panel:nth-child(11) {
+  --left: -704px;
+  --angle: 144deg;
+}
+
+.panel:nth-child(12) {
+  --left: -774.4px;
+  --angle: 158.4deg;
+}
+
+.panel:nth-child(13) {
+  --left: -844.8px;
+  --angle: 172.8deg;
+}
+
+.panel:nth-child(14) {
+  --left: -915.2px;
+  --angle: 187.2deg;
+}
+
+.panel:nth-child(15) {
+  --left: -985.6px;
+  --angle: 201.6deg;
+}
+
+.panel:nth-child(16) {
+  --left: -1056px;
+  --angle: 216deg;
+}
+
+.panel:nth-child(17) {
+  --left: -1126.4px;
+  --angle: 230.4deg;
+}
+
+.panel:nth-child(18) {
+  --left: -1196.8px;
+  --angle: 244.8deg;
+}
+
+.panel:nth-child(19) {
+  --left: -1267.2px;
+  --angle: 259.2deg;
+}
+
+.panel:nth-child(20) {
+  --left: -1337.6px;
+  --angle: 273.6deg;
+}
+
+.panel:nth-child(21) {
+  --left: -1408px;
+  --angle: 288deg;
+}
+
+.panel:nth-child(22) {
+  --left: -1478.4px;
+  --angle: 302.4deg;
+}
+
+.panel:nth-child(23) {
+  --left: -1548.8px;
+  --angle: 316.8deg;
+}
+
+.panel:nth-child(24) {
+  --left: -1619.2px;
+  --angle: 331.2deg;
+}
+
+.panel:nth-child(25) {
+  --left: -1689.6px;
+  --angle: 345.6deg;
+}
+
+.screen {
+  position: absolute;
+  width: 550px;
+  height: 150px;
+  border-radius: 37%;
+  background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(15%, #000a), color-stop(#000d), color-stop(#000d), color-stop(85%, #000a), to(transparent));
+  background-image: linear-gradient(90deg, transparent, #000a 15%, #000d, #000d, #000a 85%, transparent);
+  -webkit-transform: translate(-50%, -146px);
+          transform: translate(-50%, -146px);
+}
+
+#valeur {
+  position: absolute;
+  margin-left: 1em;
+  color: #aaa;
+}
+
+.valeurAngle {
+  position: relative;
+  width: 400px;
+}
+
+input[type=range].valAngle {
+  width: 100%;
+  margin: 6.5px 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+}
+
+input[type=range].valAngle:focus {
+  outline: none;
+}
+
+input[type=range].valAngle::-webkit-slider-runnable-track {
+  background: #ff0000;
+  border: 0;
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+}
+
+input[type=range].valAngle::-webkit-slider-thumb {
+  margin-top: -6.5px;
+  width: 15px;
+  height: 15px;
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+input[type=range].valAngle:focus::-webkit-slider-runnable-track {
+  background: #ff0000;
+}
+
+input[type=range].valAngle::-moz-range-track {
+  background: #000000;
+  border: 0;
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+}
+
+input[type=range].valAngle::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+input[type=range].valAngle::-ms-track {
+  background: #ff0000;
+  border-color: transparent;
+  border-width: 6.5px 0;
+  color: transparent;
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+}
+
+input[type=range].valAngle::-ms-fill-lower {
+  background: #ff0000;
+  border: 0;
+}
+
+input[type=range].valAngle::-ms-fill-upper {
+  background: #ff0000;
+  border: 0;
+}
+
+input[type=range].valAngle::-ms-thumb {
+  width: 15px;
+  height: 15px;
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 0px;
+  /*Needed to keep the Edge thumb centred*/
+}
+
+input[type=range].valAngle:focus::-ms-fill-lower {
+  background: #ff0000;
+}
+
+input[type=range].valAngle:focus::-ms-fill-upper {
+  background: #ff0000;
+}
+
+/*TODO: Use one of the selectors from https://stackoverflow.com/a/20541859/7077589 and figure out
+how to remove the virtical space around the range input in IE*/
+@supports (-ms-ime-align: auto) {
+  /* Pre-Chromium Edge only styles, selector taken from hhttps://stackoverflow.com/a/32202953/7077589 */
+  input[type=range].valAngle {
+    margin: 0;
+    /*Edge starts the margin from the thumb, not the track as other browsers do*/
+  }
+}
+/*# sourceMappingURL=style.css.map */
