@@ -1,0 +1,1 @@
+SCSS exercise with a slider and an image.
