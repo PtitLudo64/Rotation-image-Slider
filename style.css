@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #111;
+  background-color: #000;
   color: #fff;
   min-height: 100vh;
   display: -ms-grid;
@@ -31,27 +31,20 @@ body {
           transform-style: preserve-3d;
 }
 
-@-webkit-keyframes rotation {
-  to {
-    -webkit-transform: rotateY(-360deg);
-            transform: rotateY(-360deg);
-  }
-}
-
-@keyframes rotation {
-  to {
-    -webkit-transform: rotateY(-360deg);
-            transform: rotateY(-360deg);
-  }
-}
-
 .panel {
   position: absolute;
-  -webkit-transform: translate(-50%, -50%) rotateY(var(--angle)) translateZ(273px);
-          transform: translate(-50%, -50%) rotateY(var(--angle)) translateZ(273px);
+  -webkit-transform: translate(-50%, -50%) rotateY(var(--angle)) translateZ(275.5px);
+          transform: translate(-50%, -50%) rotateY(var(--angle)) translateZ(275.5px);
   width: 70.4px;
   height: 220px;
+  -webkit-transition: opacity, -webkit-filter 2s ease;
+  transition: opacity, -webkit-filter 2s ease;
+  transition: opacity, filter 2s ease;
+  transition: opacity, filter 2s ease, -webkit-filter 2s ease;
   overflow: hidden;
+  opacity: .8;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
 }
 
 .panel::before {
@@ -188,8 +181,8 @@ body {
 .screen {
   position: absolute;
   width: 550px;
-  height: 150px;
-  border-radius: 37%;
+  height: 250px;
+  border-radius: 25%;
   background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(15%, #000a), color-stop(#000d), color-stop(#000d), color-stop(85%, #000a), to(transparent));
   background-image: linear-gradient(90deg, transparent, #000a 15%, #000d, #000d, #000a 85%, transparent);
   -webkit-transform: translate(-50%, -146px);
@@ -297,8 +290,6 @@ input[type=range].valAngle:focus::-ms-fill-upper {
   background: #ff0000;
 }
 
-/*TODO: Use one of the selectors from https://stackoverflow.com/a/20541859/7077589 and figure out
-how to remove the virtical space around the range input in IE*/
 @supports (-ms-ime-align: auto) {
   /* Pre-Chromium Edge only styles, selector taken from hhttps://stackoverflow.com/a/32202953/7077589 */
   input[type=range].valAngle {
